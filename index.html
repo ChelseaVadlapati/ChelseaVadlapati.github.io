@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="author" content="Thilisitha Chelsea Vadlapati" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chelsea Vadlapati | Portfolio</title>
-  <meta name="description" content="Portfolio of Chelsea Vadlapati - Data Analyst, Data Engineer, and Software Engineer." />
+  <title>Thilisitha Chelsea Vadlapati | Portfolio</title>
+  <meta
+    name="description"
+    content="Portfolio of Thilisitha Chelsea Vadlapati - Data Analyst, Data Engineering, and Software Engineering."
+  />
   <style>
     :root {
       --bg: #0b1020;
@@ -20,7 +24,11 @@
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -29,8 +37,15 @@
       line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
     .container {
       width: min(var(--max), calc(100% - 32px));
@@ -57,6 +72,7 @@
     .brand {
       font-weight: 800;
       letter-spacing: 0.3px;
+      font-size: 1.02rem;
     }
 
     .nav-links {
@@ -95,12 +111,19 @@
     h1 {
       font-size: clamp(2.3rem, 5vw, 4.6rem);
       line-height: 1.04;
-      margin: 0 0 16px;
+      margin: 0 0 14px;
     }
 
     h2 {
       font-size: clamp(1.5rem, 2.2vw, 2rem);
       margin: 0 0 8px;
+    }
+
+    .role-line {
+      color: var(--accent-2);
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 16px;
     }
 
     .lead {
@@ -127,6 +150,11 @@
       background: rgba(255,255,255,0.03);
       box-shadow: var(--shadow);
       font-weight: 700;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
     }
 
     .btn.primary {
@@ -171,6 +199,7 @@
 
     section {
       padding: 22px 0;
+      scroll-margin-top: 90px;
     }
 
     .section-header {
@@ -268,6 +297,18 @@
       color: var(--muted);
     }
 
+    .github-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .github-stats img {
+      width: 100%;
+      border-radius: 18px;
+    }
+
     footer {
       padding: 34px 0 60px;
       color: var(--muted);
@@ -277,13 +318,19 @@
     @media (max-width: 900px) {
       .hero,
       .projects,
-      .grid-2 {
+      .grid-2,
+      .github-stats {
         grid-template-columns: 1fr;
       }
 
       .section-header {
         align-items: start;
         flex-direction: column;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
@@ -295,6 +342,7 @@
         <a class="brand" href="#top">Thilisitha Chelsea Vadlapati</a>
         <div class="nav-links">
           <a href="#about">About</a>
+          <a href="#github">GitHub</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
@@ -310,6 +358,7 @@
       <div>
         <span class="eyebrow">Data Analytics • Data Engineering • Software Engineering</span>
         <h1>Building data products, cloud-native pipelines, and software systems that turn raw information into decisions.</h1>
+        <div class="role-line">Data Analyst | Data Engineering | Python | SQL | Cloud Analytics</div>
         <p class="lead">
           I’m Thilisitha Chelsea Vadlapati, a data analyst and engineering-focused builder with experience across ETL pipelines, automated reporting, dashboarding, validation frameworks, APIs, and cloud-native projects. I like solving messy data problems with clean systems, measurable outcomes, and recruiter-ready execution.
         </p>
@@ -375,6 +424,27 @@
             <li>Experience across analytics, cloud projects, and software systems</li>
             <li>Focuses on measurable impact, data reliability, and practical business value</li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="github">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">GitHub Activity</h2>
+          <p class="section-copy">Live development activity and repository proof of work.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="github-stats">
+          <img
+            src="https://github-readme-stats.vercel.app/api?username=ChelseaVadlapati&show_icons=true&theme=tokyonight&hide_border=true"
+            alt="GitHub stats for ChelseaVadlapati"
+          />
+          <img
+            src="https://github-readme-streak-stats.herokuapp.com/?user=ChelseaVadlapati&theme=tokyonight&hide_border=true"
+            alt="GitHub streak stats for ChelseaVadlapati"
+          />
         </div>
       </div>
     </section>
@@ -472,6 +542,7 @@
             <li>Implemented validation, reconciliation, and anomaly checks across analytics pipelines, improving dataset reliability by about 35% and reducing downstream rework.</li>
           </ul>
         </div>
+
         <div class="experience-item">
           <h3>Application Development Associate · Accenture Solutions Pvt Ltd</h3>
           <p class="muted">Nov 2021 – Aug 2023 · Bangalore, India</p>
@@ -482,6 +553,7 @@
             <li>Led recurring phishing and security awareness training for 20+ colleagues, improving quiz performance and reducing reported incidents through clearer reporting practices.</li>
           </ul>
         </div>
+
         <div class="experience-item">
           <h3>Software Engineer Intern · Absyz Software Consulting Pvt Ltd</h3>
           <p class="muted">Feb 2021 – Aug 2021 · Hyderabad, India</p>
@@ -552,7 +624,7 @@
         <div class="experience-item" style="padding-top:0; border-top:none; margin-top:0;">
           <h3>University of Florida</h3>
           <p class="muted">Master of Science in Information Systems and Operations Management</p>
-          <p>Graduated Aug 2, 2025</p>
+          <p>Graduated Aug 2025</p>
         </div>
         <div class="experience-item">
           <h3>GITAM University</h3>
