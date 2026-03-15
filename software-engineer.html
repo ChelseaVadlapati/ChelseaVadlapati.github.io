@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Thilisitha Chelsea Vadlapati" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thilisitha Chelsea Vadlapati | Software Engineer</title>
+  <meta name="description" content="Software Engineer portfolio of Thilisitha Chelsea Vadlapati." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: rgba(18, 25, 51, 0.82);
+      --text: #eef2ff;
+      --muted: #b8c0e0;
+      --accent: #7c9cff;
+      --accent-2: #8ef0d0;
+      --border: rgba(255,255,255,0.10);
+      --shadow: 0 20px 50px rgba(0,0,0,0.35);
+      --max: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #0a0f1e 0%, #111a36 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(10, 15, 30, 0.78);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+
+    .hero {
+      padding: 70px 0 34px;
+    }
+
+    .eyebrow {
+      color: var(--accent-2);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      margin: 10px 0 12px;
+    }
+
+    h2 {
+      margin-bottom: 8px;
+    }
+
+    .lead, .muted {
+      color: var(--muted);
+    }
+
+    section {
+      padding: 20px 0;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+    }
+
+    ul {
+      color: var(--muted);
+      padding-left: 18px;
+    }
+
+    .project-links {
+      color: var(--accent-2);
+      font-weight: 700;
+      margin-top: 12px;
+    }
+
+    footer {
+      padding: 28px 0 50px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .grid-2, .projects {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="index.html">Thilisitha Chelsea Vadlapati</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="data-analyst.html">Data Analyst</a>
+          <a href="data-engineer.html">Data Engineer</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow">Role Target</div>
+      <h1>Software Engineer Portfolio</h1>
+      <p class="lead">
+        I build backend systems, APIs, automation workflows, and cloud-native applications with a focus on maintainability, performance, testing, and real-world engineering execution. My strongest software projects show service design, systems thinking, reliability, and production-style implementation.
+      </p>
+    </section>
+
+    <section>
+      <div class="grid-2">
+        <div class="card">
+          <h2>Why I Fit This Role</h2>
+          <ul>
+            <li>Built backend systems, APIs, and cloud-native applications using Java, Python, FastAPI, Spring Boot, Docker, and PostgreSQL</li>
+            <li>Strong in automation, validation frameworks, testability, and maintainable production-style workflows</li>
+            <li>Comfortable with systems-level problem solving, distributed services, and structured backend architecture</li>
+            <li>Experience shipping technical projects that demonstrate real engineering judgment beyond coursework demos</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Core Skills</h2>
+          <div class="chips">
+            <span class="chip">Java</span>
+            <span class="chip">Python</span>
+            <span class="chip">FastAPI</span>
+            <span class="chip">Spring Boot</span>
+            <span class="chip">Docker</span>
+            <span class="chip">Microservices</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">APIs</span>
+            <span class="chip">Backend Development</span>
+            <span class="chip">Cloud Architecture</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="card">
+        <h2>Relevant Experience</h2>
+        <ul>
+          <li><strong>Accenture:</strong> Automated 120+ validation scripts, performed regression, smoke, and end-to-end testing across integrated systems, and used root-cause analysis to reduce defect leakage and improve release quality.</li>
+          <li><strong>Absyz Software Consulting:</strong> Built Salesforce automations with LWC, Apex Triggers, and workflows to improve validation logic, reduce manual entry, and improve turnaround time.</li>
+          <li><strong>Intersect Healthcare Systems:</strong> Built Python and SQL workflows, reporting automation, and reliability checks that strengthened production-style data processing and operational reporting systems.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="projects">
+  <article class="card">
+    <h3>Cloud-Native E-commerce Microservices</h3>
+    <p class="muted">Designed a distributed application using Spring Boot, containerized services, isolated databases, REST communication, and production-style backend patterns.</p>
+    <p class="muted"><strong>Why it fits Software Engineer roles:</strong> backend architecture, service decomposition, microservices, Docker, API communication.</p>
+    <div class="project-links">
+      <a href="https://github.com/ChelseaVadlapati/Cloud-Native-E-commerce-Microservices" target="_blank" rel="noreferrer">GitHub Repo</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <h3>CosmosVoyage</h3>
+    <p class="muted">Built a FastAPI and PostgreSQL platform with secure authentication, tested REST endpoints, cloud-ready deployment patterns, and structured backend workflows.</p>
+    <p class="muted"><strong>Why it fits Software Engineer roles:</strong> backend development, API design, database integration, testing, cloud deployment.</p>
+    <div class="project-links">
+      <a href="https://github.com/ChelseaVadlapati/CosmosVoyage" target="_blank" rel="noreferrer">GitHub Repo</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <h3>Packet Analyzer</h3>
+    <p class="muted">Built a systems-focused packet analysis tool in C with capture, parsing, filtering, reporting, and performance-oriented implementation details.</p>
+    <p class="muted"><strong>Why it fits Software Engineer roles:</strong> systems programming, debugging, low-level engineering, performance awareness, protocol handling.</p>
+    <div class="project-links">
+      <a href="https://github.com/ChelseaVadlapati/packet-analyzer" target="_blank" rel="noreferrer">GitHub Repo</a>
+    </div>
+  </article>
+
+  <article class="card">
+    <h3>Storage QA Regression Framework</h3>
+    <p class="muted">Built a Python-based regression framework that executes configurable workloads, compares baselines versus current runs, produces machine-readable reports, and supports CI-style quality gates.</p>
+    <p class="muted"><strong>Why it fits Software Engineer roles:</strong> automation engineering, testing infrastructure, validation frameworks, CI-oriented design, maintainable tooling.</p>
+    <div class="project-links">
+      <a href="https://github.com/ChelseaVadlapati/storage-qa-regression-framework" target="_blank" rel="noreferrer">GitHub Repo</a>
+    </div>
+  </article>
+</div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Thilisitha Chelsea Vadlapati</p>
+    </div>
+  </footer>
+</body>
+</html>
