@@ -109,14 +109,18 @@
     }
 
     h1 {
-      font-size: clamp(2.3rem, 5vw, 4.6rem);
-      line-height: 1.04;
-      margin: 0 0 14px;
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      line-height: 1.02;
+      margin: 0 0 12px;
     }
 
     h2 {
       font-size: clamp(1.5rem, 2.2vw, 2rem);
       margin: 0 0 8px;
+    }
+
+    h3 {
+      margin-top: 0;
     }
 
     .role-line {
@@ -128,7 +132,7 @@
 
     .lead {
       color: var(--muted);
-      font-size: 1.06rem;
+      font-size: 1.08rem;
       max-width: 64ch;
       margin-bottom: 22px;
     }
@@ -170,11 +174,6 @@
       border-radius: 24px;
       padding: 22px;
       box-shadow: var(--shadow);
-    }
-
-    .hero-card h3,
-    .section-title {
-      margin-top: 0;
     }
 
     .stats {
@@ -309,6 +308,14 @@
       border-radius: 18px;
     }
 
+    .outcome-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent-2);
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+
     footer {
       padding: 34px 0 60px;
       color: var(--muted);
@@ -342,6 +349,7 @@
         <a class="brand" href="#top">Thilisitha Chelsea Vadlapati</a>
         <div class="nav-links">
           <a href="#about">About</a>
+          <a href="#highlights">Highlights</a>
           <a href="#github">GitHub</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
@@ -356,16 +364,22 @@
   <main id="top" class="container">
     <section class="hero">
       <div>
-        <span class="eyebrow">Data Analytics • Data Engineering • Software Engineering</span>
-        <h1>Building data products, cloud-native pipelines, and software systems that turn raw information into decisions.</h1>
-        <div class="role-line">Data Analyst | Data Engineering | Python | SQL | Cloud Analytics</div>
+        <span class="eyebrow">Data Analytics • Data Engineering • Analytics Engineering</span>
+        <h1>Thilisitha Chelsea Vadlapati</h1>
+        <div class="role-line">Data Analyst • Data Engineer • Python • SQL • Cloud Analytics</div>
         <p class="lead">
-          I’m Thilisitha Chelsea Vadlapati, a data analyst and engineering-focused builder with experience across ETL pipelines, automated reporting, dashboarding, validation frameworks, APIs, and cloud-native projects. I like solving messy data problems with clean systems, measurable outcomes, and recruiter-ready execution.
+          I build ETL pipelines, automated reporting workflows, and analytics dashboards that improve data quality, reduce manual effort, and help teams make faster decisions.
         </p>
         <div class="cta-row">
           <a class="btn primary" href="https://github.com/ChelseaVadlapati" target="_blank" rel="noreferrer">View GitHub</a>
           <a class="btn" href="/Resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
           <a class="btn" href="#projects">See Projects</a>
+        </div>
+        <div class="chips" style="margin: 8px 0 18px 0;">
+          <span class="chip">100K+ healthcare records processed</span>
+          <span class="chip">50% less manual reporting</span>
+          <span class="chip">35% higher dataset reliability</span>
+          <span class="chip">120+ validation scripts automated</span>
         </div>
         <div class="social">
           <a href="https://github.com/ChelseaVadlapati" target="_blank" rel="noreferrer">GitHub</a>
@@ -376,7 +390,7 @@
 
       <aside class="hero-card">
         <h3>Quick Snapshot</h3>
-        <p class="muted">This section is designed for recruiter skim speed.</p>
+        <p class="muted">A fast read for recruiters scanning for technical fit and impact.</p>
         <div class="stats">
           <div class="stat">
             <strong>MS-ISOM</strong>
@@ -387,12 +401,12 @@
             <span class="muted">Intersect Healthcare Systems</span>
           </div>
           <div class="stat">
-            <strong>App Dev Background</strong>
-            <span class="muted">Accenture</span>
+            <strong>120+</strong>
+            <span class="muted">Validation scripts automated</span>
           </div>
           <div class="stat">
             <strong>Core Stack</strong>
-            <span class="muted">Python, SQL, AWS, Azure, APIs</span>
+            <span class="muted">Python, SQL, Power BI, AWS, Azure</span>
           </div>
         </div>
       </aside>
@@ -402,28 +416,49 @@
       <div class="section-header">
         <div>
           <h2 class="section-title">About Me</h2>
-          <p class="section-copy">A concise summary that quickly shows recruiters what I build and the value I bring.</p>
+          <p class="section-copy">A concise summary of what I build and the kind of value I deliver.</p>
         </div>
       </div>
       <div class="grid-2">
         <div class="card">
           <p>
-            I’m a data analyst and data engineering-focused professional who builds reliable data pipelines, automated reporting systems, and analytics dashboards that help teams make better decisions. My work centers on turning fragmented datasets into structured insights using Python, SQL, and modern data platforms.
-          </p>
-          <p>
-            I’ve built ETL pipelines processing large datasets, automated reporting workflows that reduce manual effort, and interactive dashboards that let non-technical teams explore performance metrics on their own. I’m especially interested in projects that combine analytics, automation, and cloud infrastructure to make data more accessible and trustworthy.
+            I’m a data analyst and data engineering-focused professional with experience building ETL pipelines, reporting automation, and dashboard solutions using Python, SQL, and cloud tools. I focus on improving data reliability, reducing manual work, and delivering insights teams can actually use.
           </p>
         </div>
         <div class="card">
-          <p>
-            Previously, I worked at Accenture where I automated large-scale data validation workflows and improved data accuracy across enterprise CRM systems. I also support healthcare-focused analytics work at Intersect Healthcare Systems by building reporting pipelines, improving data quality, and creating dashboard-ready insights for operational decision-making.
-          </p>
           <ul class="highlight-list">
             <li>Builds ETL pipelines, dashboards, and reporting automation</li>
             <li>Strong in Python, SQL, Power BI, and data validation</li>
             <li>Experience across analytics, cloud projects, and software systems</li>
             <li>Focuses on measurable impact, data reliability, and practical business value</li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="highlights">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Featured Outcomes</h2>
+          <p class="section-copy">A few measurable results that show how I improve reliability, reporting, and operational visibility.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="outcome-number">30%</div>
+          <p class="muted">Improved ETL processing throughput across fragmented healthcare datasets.</p>
+        </div>
+        <div class="card">
+          <div class="outcome-number">50%</div>
+          <p class="muted">Reduced manual reporting effort through Python automation.</p>
+        </div>
+        <div class="card">
+          <div class="outcome-number">35%</div>
+          <p class="muted">Improved dataset reliability with validation, reconciliation, and anomaly checks.</p>
+        </div>
+        <div class="card">
+          <div class="outcome-number">120+</div>
+          <p class="muted">Automated validation scripts across enterprise CRM workflows.</p>
         </div>
       </div>
     </section>
@@ -453,7 +488,7 @@
       <div class="section-header">
         <div>
           <h2 class="section-title">Featured Projects</h2>
-          <p class="section-copy">A few high-signal projects that show analytics depth, engineering range, and production-style thinking.</p>
+          <p class="section-copy">Selected projects that demonstrate analytics depth, engineering range, and production-style thinking.</p>
         </div>
       </div>
 
@@ -461,8 +496,9 @@
         <article class="card project-card">
           <h3>Oracle PL/SQL Fraud Analytics Pipeline</h3>
           <p>
-            Built an end-to-end ETL and analytics pipeline using Oracle SQL/PL/SQL and Python to process 200K credit card transactions from raw ingest to curated fraud summary tables for repeatable reporting and faster trend analysis.
+            Built an end-to-end fraud analytics pipeline using Oracle SQL/PL/SQL and Python, processing 200K transactions from ingest to curated reporting tables with automated validation and repeatable trend analysis.
           </p>
+          <p class="muted"><strong>What it proves:</strong> ETL design, SQL/PLSQL engineering, data validation, automation.</p>
           <div class="chips">
             <span class="chip">Oracle SQL</span>
             <span class="chip">PL/SQL</span>
@@ -479,6 +515,7 @@
           <p>
             Built an Azure-native backend project with API services, database integration, and production-style architecture patterns to showcase cloud deployment, service design, and end-to-end engineering execution.
           </p>
+          <p class="muted"><strong>What it proves:</strong> cloud deployment, API design, backend architecture, database integration.</p>
           <div class="chips">
             <span class="chip">Azure</span>
             <span class="chip">FastAPI</span>
@@ -495,6 +532,7 @@
           <p>
             Developed an NLP and analytics workflow that transformed customer review data into sentiment insights, interactive dashboards, and business-facing outputs for product and customer experience analysis.
           </p>
+          <p class="muted"><strong>What it proves:</strong> NLP analysis, dashboarding, business insight generation, stakeholder-facing reporting.</p>
           <div class="chips">
             <span class="chip">Python</span>
             <span class="chip">NLP</span>
@@ -511,6 +549,7 @@
           <p>
             Designed a distributed application using service-based architecture and containerized components to demonstrate scalable backend development, deployment workflows, and modern microservices structure.
           </p>
+          <p class="muted"><strong>What it proves:</strong> distributed systems thinking, microservices design, containerization, backend development.</p>
           <div class="chips">
             <span class="chip">Java</span>
             <span class="chip">Spring Boot</span>
@@ -637,10 +676,11 @@
       <div class="section-header">
         <div>
           <h2 class="section-title">Contact</h2>
-          <p class="section-copy">Easy ways to reach me or review my work.</p>
+          <p class="section-copy">I’m actively seeking data analyst, data engineering, and analytics engineering opportunities.</p>
         </div>
       </div>
       <div class="card">
+        <p>I’m open to full-time roles, collaborations, and conversations about analytics, data infrastructure, and technical projects.</p>
         <p><strong>Email:</strong> <a href="mailto:tchelseav08@gmail.com">tchelseav08@gmail.com</a></p>
         <p><strong>GitHub:</strong> <a href="https://github.com/ChelseaVadlapati" target="_blank" rel="noreferrer">github.com/ChelseaVadlapati</a></p>
         <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/chelseavadlapati/" target="_blank" rel="noreferrer">linkedin.com/in/chelseavadlapati</a></p>
