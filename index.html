@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chelsea Vadlapati | Portfolio</title>
+  <meta name="description" content="Portfolio of Chelsea Vadlapati - Data Analyst, Data Engineer, and Software Engineer." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #121933;
+      --card: rgba(18, 25, 51, 0.82);
+      --text: #eef2ff;
+      --muted: #b8c0e0;
+      --accent: #7c9cff;
+      --accent-2: #8ef0d0;
+      --border: rgba(255,255,255,0.10);
+      --shadow: 0 20px 50px rgba(0,0,0,0.35);
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #0a0f1e 0%, #111a36 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(10, 15, 30, 0.78);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 18px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover,
+    .social a:hover,
+    .project-links a:hover,
+    .btn:hover {
+      opacity: 0.86;
+    }
+
+    .hero {
+      padding: 76px 0 44px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--accent-2);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.82rem;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 4.6rem);
+      line-height: 1.04;
+      margin: 0 0 16px;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 2.2vw, 2rem);
+      margin: 0 0 8px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.06rem;
+      max-width: 64ch;
+      margin-bottom: 22px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      box-shadow: var(--shadow);
+      font-weight: 700;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), #a48dff);
+      color: white;
+      border: none;
+    }
+
+    .hero-card,
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3,
+    .section-title {
+      margin-top: 0;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .stat {
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+    }
+
+    section {
+      padding: 22px 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      max-width: 65ch;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .project-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-weight: 700;
+      color: var(--accent-2);
+    }
+
+    .experience-item + .experience-item {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .experience-item h3,
+    .experience-item p,
+    .experience-item ul {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .experience-item ul {
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .social {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+      color: var(--accent-2);
+      font-weight: 700;
+    }
+
+    .highlight-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 34px 0 60px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .projects,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#top">Chelsea Vadlapati</a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Data Analytics • Data Engineering • Software Engineering</span>
+        <h1>Building data products, cloud-native pipelines, and software systems that turn raw information into decisions.</h1>
+        <p class="lead">
+          I’m Chelsea Vadlapati, a data analyst and engineering-focused builder with experience across ETL pipelines, automated reporting, dashboarding, validation frameworks, APIs, and cloud-native projects. I like solving messy data problems with clean systems, measurable outcomes, and recruiter-ready execution.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="https://github.com/ChelseaVadlapati" target="_blank" rel="noreferrer">View GitHub</a>
+          <a class="btn" href="/Resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
+          <a class="btn" href="#projects">See Projects</a>
+        </div>
+        <div class="social">
+          <a href="https://github.com/ChelseaVadlapati" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/chelseavadlapati/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:your-email@example.com">your-email@example.com</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h3>Quick Snapshot</h3>
+        <p class="muted">This section is designed for recruiter skim speed.</p>
+        <div class="stats">
+          <div class="stat">
+            <strong>MS-ISOM</strong>
+            <span class="muted">University of Florida</span>
+          </div>
+          <div class="stat">
+            <strong>Volunteer Data Analyst</strong>
+            <span class="muted">Intersect Healthcare Systems</span>
+          </div>
+          <div class="stat">
+            <strong>App Dev Background</strong>
+            <span class="muted">Accenture</span>
+          </div>
+          <div class="stat">
+            <strong>Core Stack</strong>
+            <span class="muted">Python, SQL, AWS, Azure, APIs</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">About Me</h2>
+          <p class="section-copy">A concise summary that quickly shows recruiters what I build and the value I bring.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <p>
+            I’m a data analyst and data engineering-focused professional who builds reliable data pipelines, automated reporting systems, and analytics dashboards that help teams make better decisions. My work centers on turning fragmented datasets into structured insights using Python, SQL, and modern data platforms.
+          </p>
+          <p>
+            I’ve built ETL pipelines processing large datasets, automated reporting workflows that reduce manual effort, and interactive dashboards that let non-technical teams explore performance metrics on their own. I’m especially interested in projects that combine analytics, automation, and cloud infrastructure to make data more accessible and trustworthy.
+          </p>
+        </div>
+        <div class="card">
+          <p>
+            Previously, I worked at Accenture where I automated large-scale data validation workflows and improved data accuracy across enterprise CRM systems. I also support healthcare-focused analytics work at Intersect Healthcare Systems by building reporting pipelines, improving data quality, and creating dashboard-ready insights for operational decision-making.
+          </p>
+          <ul class="highlight-list">
+            <li>Builds ETL pipelines, dashboards, and reporting automation</li>
+            <li>Strong in Python, SQL, Power BI, and data validation</li>
+            <li>Experience across analytics, cloud projects, and software systems</li>
+            <li>Focuses on measurable impact, data reliability, and practical business value</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-copy">A few high-signal projects that show analytics depth, engineering range, and production-style thinking.</p>
+        </div>
+      </div>
+
+      <div class="projects">
+        <article class="card project-card">
+          <h3>Oracle PL/SQL Fraud Analytics Pipeline</h3>
+          <p>
+            Built an end-to-end ETL and analytics pipeline using Oracle SQL/PL/SQL and Python to process 200K credit card transactions from raw ingest to curated fraud summary tables for repeatable reporting and faster trend analysis.
+          </p>
+          <div class="chips">
+            <span class="chip">Oracle SQL</span>
+            <span class="chip">PL/SQL</span>
+            <span class="chip">Python</span>
+            <span class="chip">Docker</span>
+          </div>
+          <div class="project-links" style="margin-top:14px;">
+            <a href="https://github.com/ChelseaVadlapati/oracle-plsql-fraud-analytics" target="_blank" rel="noreferrer">GitHub Repo</a>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <h3>CosmosVoyage</h3>
+          <p>
+            Built an Azure-native backend project with API services, database integration, and production-style architecture patterns to showcase cloud deployment, service design, and end-to-end engineering execution.
+          </p>
+          <div class="chips">
+            <span class="chip">Azure</span>
+            <span class="chip">FastAPI</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">Backend Engineering</span>
+          </div>
+          <div class="project-links" style="margin-top:14px;">
+            <a href="https://github.com/ChelseaVadlapati/CosmosVoyage" target="_blank" rel="noreferrer">GitHub Repo</a>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <h3>Amazon Fine Food Analytics</h3>
+          <p>
+            Developed an NLP and analytics workflow that transformed customer review data into sentiment insights, interactive dashboards, and business-facing outputs for product and customer experience analysis.
+          </p>
+          <div class="chips">
+            <span class="chip">Python</span>
+            <span class="chip">NLP</span>
+            <span class="chip">Streamlit</span>
+            <span class="chip">Power BI</span>
+          </div>
+          <div class="project-links" style="margin-top:14px;">
+            <a href="https://github.com/ChelseaVadlapati/Amazon-Fine-Food-Analytics" target="_blank" rel="noreferrer">GitHub Repo</a>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <h3>Cloud-Native E-commerce Microservices</h3>
+          <p>
+            Designed a distributed application using service-based architecture and containerized components to demonstrate scalable backend development, deployment workflows, and modern microservices structure.
+          </p>
+          <div class="chips">
+            <span class="chip">Java</span>
+            <span class="chip">Spring Boot</span>
+            <span class="chip">Docker</span>
+            <span class="chip">Microservices</span>
+          </div>
+          <div class="project-links" style="margin-top:14px;">
+            <a href="https://github.com/ChelseaVadlapati/Cloud-Native-E-commerce-Microservices" target="_blank" rel="noreferrer">GitHub Repo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Experience</h2>
+          <p class="section-copy">Focused on outcomes, data reliability, automation, and stakeholder value.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="experience-item">
+          <h3>Data Analyst · Intersect Healthcare Systems</h3>
+          <p class="muted">Sep 2025 – Present · Gainesville, FL</p>
+          <ul>
+            <li>Built and maintained SQL and Python ETL workflows integrating fragmented healthcare datasets with 100K+ records, improving processing throughput by 30% while enforcing data integrity checks.</li>
+            <li>Automated recurring Python reporting pipelines, reducing manual reporting by 50% and accelerating operational KPI delivery to stakeholders.</li>
+            <li>Developed interactive Power BI dashboards for trend and performance monitoring, enabling self-serve reporting for non-technical teams.</li>
+            <li>Implemented validation, reconciliation, and anomaly checks across analytics pipelines, improving dataset reliability by about 35% and reducing downstream rework.</li>
+          </ul>
+        </div>
+        <div class="experience-item">
+          <h3>Application Development Associate · Accenture Solutions Pvt Ltd</h3>
+          <p class="muted">Nov 2021 – Aug 2023 · Bangalore, India</p>
+          <ul>
+            <li>Automated 120+ data validation test scripts for large-scale CRM workflows, improving data accuracy by 25% and reducing release defects by 30% through repeatable coverage.</li>
+            <li>Performed regression, smoke, and end-to-end testing with root-cause analysis across integrated systems, logging 80+ defects and reducing defect leakage by 20%.</li>
+            <li>Validated record-level transformations and business rules to maintain 99% consistency across staging and production datasets supporting downstream reporting.</li>
+            <li>Led recurring phishing and security awareness training for 20+ colleagues, improving quiz performance and reducing reported incidents through clearer reporting practices.</li>
+          </ul>
+        </div>
+        <div class="experience-item">
+          <h3>Software Engineer Intern · Absyz Software Consulting Pvt Ltd</h3>
+          <p class="muted">Feb 2021 – Aug 2021 · Hyderabad, India</p>
+          <ul>
+            <li>Built Salesforce automations using LWC, Apex Triggers, and workflows to improve validation logic and process throughput, reducing manual entry by 30% and improving turnaround by 25%.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Skills</h2>
+          <p class="section-copy">Organized for fast recruiter scanning and stronger keyword coverage.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Languages, Analytics & Data</h3>
+          <div class="chips">
+            <span class="chip">Python</span>
+            <span class="chip">SQL</span>
+            <span class="chip">Oracle PL/SQL</span>
+            <span class="chip">Java</span>
+            <span class="chip">Pandas</span>
+            <span class="chip">ETL/ELT</span>
+            <span class="chip">Data Validation</span>
+            <span class="chip">Data Integrity Checks</span>
+            <span class="chip">Dimensional Modeling</span>
+            <span class="chip">Data Cleaning</span>
+            <span class="chip">KPI Design</span>
+            <span class="chip">Trend Analysis</span>
+            <span class="chip">Anomaly Analysis</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>BI, Databases, Cloud & Tools</h3>
+          <div class="chips">
+            <span class="chip">Power BI</span>
+            <span class="chip">Tableau</span>
+            <span class="chip">Oracle</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">SQL Server</span>
+            <span class="chip">AWS S3</span>
+            <span class="chip">AWS Glue</span>
+            <span class="chip">AWS Athena</span>
+            <span class="chip">AWS Lambda</span>
+            <span class="chip">Azure Data Factory</span>
+            <span class="chip">FastAPI</span>
+            <span class="chip">Docker</span>
+            <span class="chip">Git/GitHub</span>
+            <span class="chip">Streamlit</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Education</h2>
+          <p class="section-copy">Keep this simple and credible.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="experience-item" style="padding-top:0; border-top:none; margin-top:0;">
+          <h3>University of Florida</h3>
+          <p class="muted">Master of Science in Information Systems and Operations Management</p>
+          <p>Graduated May 2, 2025</p>
+        </div>
+        <div class="experience-item">
+          <h3>GITAM University</h3>
+          <p class="muted">Bachelor of Technology in Electronics and Communication Engineering</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Contact</h2>
+          <p class="section-copy">Easy ways to reach me or review my work.</p>
+        </div>
+      </div>
+      <div class="card">
+        <p><strong>Email:</strong> <a href="mailto:chelseavadlapati@gmail.com">chelseavadlapati@gmail.com</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/ChelseaVadlapati" target="_blank" rel="noreferrer">github.com/ChelseaVadlapati</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/chelseavadlapati/" target="_blank" rel="noreferrer">linkedin.com/in/chelseavadlapati</a></p>
+        <p><strong>Resume:</strong> Your resume file is already in the repo root. If the button does not open it, rename <code>Thilisitha Chelsea Vadlapati_Resume.pdf</code> to <code>resume.pdf</code> or update the button path to match the file name.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Chelsea Vadlapati. Built with HTML and hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+</body>
+</html>
