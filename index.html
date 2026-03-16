@@ -64,9 +64,19 @@
       flex-wrap: wrap;
     }
 
+    .nav-links a:hover,
+    .social a:hover,
+    .card-link:hover,
+    .btn:hover {
+      opacity: 0.88;
+    }
+
     .hero {
-      padding: 88px 0 52px;
-      text-align: center;
+      padding: 72px 0 44px;
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 24px;
+      align-items: center;
     }
 
     .eyebrow {
@@ -92,18 +102,17 @@
     }
 
     .lead {
-      max-width: 760px;
-      margin: 0 auto 24px;
+      max-width: 66ch;
+      margin: 0 0 22px;
       color: var(--muted);
       font-size: 1.08rem;
     }
 
     .social {
       display: flex;
-      justify-content: center;
       gap: 16px;
       flex-wrap: wrap;
-      margin-bottom: 34px;
+      margin-bottom: 22px;
       color: var(--accent-2);
       font-weight: 700;
     }
@@ -156,6 +165,80 @@
       font-weight: 700;
     }
 
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 16px;
+    }
+
+    .profile-photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .snapshot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .snapshot-item {
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .snapshot-item strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1.02rem;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      box-shadow: var(--shadow);
+      font-weight: 700;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), #a48dff);
+      color: white;
+      border: none;
+    }
+
     footer {
       padding: 28px 0 50px;
       text-align: center;
@@ -163,7 +246,9 @@
     }
 
     @media (max-width: 900px) {
-      .grid {
+      .hero,
+      .grid,
+      .snapshot-grid {
         grid-template-columns: 1fr;
       }
 
@@ -191,20 +276,52 @@
 
   <main class="container">
     <section class="hero">
-      <span class="eyebrow">Portfolio</span>
-      <h1>Thilisitha Chelsea Vadlapati</h1>
-      <div class="role-line">Data Analyst • Data Engineer • Software Engineer</div>
-      <p class="lead">
-        Explore my portfolio by role. Each page is tailored to the skills, projects, and experience most relevant to Data Analyst, Data Engineer, and Software Engineer opportunities.
-      </p>
-      <div class="social">
-        <a href="https://github.com/ChelseaVadlapati" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/chelseavadlapati/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="mailto:tchelseav08@gmail.com">Email</a>
+      <div class="hero-copy">
+        <span class="eyebrow">Portfolio</span>
+        <h1>Thilisitha Chelsea Vadlapati</h1>
+        <div class="role-line">Data Analyst • Data Engineer • Software Engineer</div>
+        <p class="lead">
+          I build ETL pipelines, reporting automation, analytics dashboards, and backend systems that turn raw data into reliable outputs, faster decisions, and cleaner workflows. Explore my portfolio by role to see the projects and experience most relevant to each path.
+        </p>
+        <div class="btn-row">
+          <a class="btn primary" href="#roles">Explore by Role</a>
+          <a class="btn" href="mailto:tchelseav08@gmail.com">Contact Me</a>
+        </div>
+        <div class="social">
+          <a href="https://github.com/ChelseaVadlapati" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/chelseavadlapati/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:tchelseav08@gmail.com">Email</a>
+        </div>
       </div>
+
+      <aside class="hero-panel">
+        <img class="profile-photo" src="Profile.png" alt="Thilisitha Chelsea Vadlapati" />
+        <div>
+          <h2 style="margin-bottom: 8px;">Quick Snapshot</h2>
+          <p class="section-copy">A quick recruiter-friendly summary of my background and impact.</p>
+          <div class="snapshot-grid">
+            <div class="snapshot-item">
+              <strong>3+ Years</strong>
+              <span>Experience across analytics, validation, automation, and software-facing work</span>
+            </div>
+            <div class="snapshot-item">
+              <strong>100K+</strong>
+              <span>Healthcare records processed through SQL and Python workflows</span>
+            </div>
+            <div class="snapshot-item">
+              <strong>120+</strong>
+              <span>Validation scripts automated in enterprise workflows</span>
+            </div>
+            <div class="snapshot-item">
+              <strong>Aug 2025</strong>
+              <span>MS-ISOM graduate from the University of Florida</span>
+            </div>
+          </div>
+        </div>
+      </aside>
     </section>
 
-    <section class="roles">
+    <section class="roles" id="roles">
       <h2 class="section-title">Explore by Role</h2>
       <p class="section-copy">Choose the version of my portfolio that best matches the role you are hiring for.</p>
 
