@@ -172,7 +172,6 @@
     }
 
     .hero-copy,
-    .hero-panel,
     .fade-up {
       opacity: 0;
       transform: translateY(24px);
@@ -180,6 +179,7 @@
     }
 
     .hero-copy { animation-delay: 0.18s; }
+    .hero-panel { opacity: 0; transform: translateY(24px); animation: riseIn 0.8s ease forwards, floatPanel 5.8s ease-in-out 0.8s infinite; }
     .hero-panel { animation-delay: 0.34s; }
     .fade-delay-1 { animation-delay: 0.18s; }
     .fade-delay-2 { animation-delay: 0.28s; }
@@ -310,7 +310,6 @@
       gap: 14px;
       max-width: 500px;
       justify-self: end;
-      animation: floatPanel 5.8s ease-in-out infinite;
       transform-origin: center;
       will-change: transform;
     }
