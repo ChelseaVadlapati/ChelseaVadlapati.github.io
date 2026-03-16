@@ -279,21 +279,6 @@
         transform: scale(0.97);
       }
     }
-    
-    @keyframes snapshotPulse {
-      0% {
-        transform: translateY(0px) scale(1);
-        box-shadow: 0 0 0 rgba(124,156,255,0);
-      }
-      50% {
-        transform: translateY(-10px) scale(1.02);
-        box-shadow: 0 18px 34px rgba(124,156,255,0.18);
-      }
-      100% {
-        transform: translateY(0px) scale(1);
-        box-shadow: 0 0 0 rgba(124,156,255,0);
-      }
-    }
 
     .btn-row {
       display: flex;
@@ -419,18 +404,6 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
-    }
-    .snapshot-grid .snapshot-item:nth-child(1) {
-      animation: snapshotPulse 2.8s ease-in-out infinite;
-    }
-    .snapshot-grid .snapshot-item:nth-child(2) {
-      animation: snapshotPulse 2.8s ease-in-out 0.35s infinite;
-    }
-    .snapshot-grid .snapshot-item:nth-child(3) {
-      animation: snapshotPulse 2.8s ease-in-out 0.7s infinite;
-    }
-    .snapshot-grid .snapshot-item:nth-child(4) {
-      animation: snapshotPulse 2.8s ease-in-out 1.05s infinite;
     }
 
     .snapshot-item {
@@ -617,11 +590,11 @@
         justify-self: stretch;
       }
       .hero-panel,
-      .photo-wrap,
-      .snapshot-grid .snapshot-item {
+      .photo-wrap{
         animation: none;
       }
     }
+
   </style>
 </head>
 <body>
