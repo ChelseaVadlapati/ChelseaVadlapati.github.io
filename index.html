@@ -179,7 +179,7 @@
     }
 
     .hero-copy { animation-delay: 0.18s; }
-    .hero-panel { opacity: 0; transform: translateY(24px); animation: riseIn 0.8s ease forwards, floatPanel 5.8s ease-in-out 0.8s infinite; }
+    .hero-panel { opacity: 0; transform: translateY(24px); animation: riseIn 0.8s ease forwards, floatPanel 3.6s ease-in-out 0.8s infinite; }
     .hero-panel { animation-delay: 0.34s; }
     .fade-delay-1 { animation-delay: 0.18s; }
     .fade-delay-2 { animation-delay: 0.28s; }
@@ -240,11 +240,58 @@
       0% {
         transform: translateY(0px);
       }
+      20% {
+        transform: translateY(-8px);
+      }
       50% {
+        transform: translateY(-18px);
+      }
+      80% {
         transform: translateY(-8px);
       }
       100% {
         transform: translateY(0px);
+      }
+    }
+
+    @keyframes photoFloat {
+      0% {
+        transform: translateY(0px) scale(1);
+      }
+      50% {
+        transform: translateY(-14px) scale(1.01);
+      }
+      100% {
+        transform: translateY(0px) scale(1);
+      }
+    }
+    @keyframes glowPulse {
+      0% {
+        opacity: 0.68;
+        transform: scale(0.97);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+      100% {
+        opacity: 0.68;
+        transform: scale(0.97);
+      }
+    }
+    
+    @keyframes snapshotPulse {
+      0% {
+        transform: translateY(0px) scale(1);
+        box-shadow: 0 0 0 rgba(124,156,255,0);
+      }
+      50% {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 18px 34px rgba(124,156,255,0.18);
+      }
+      100% {
+        transform: translateY(0px) scale(1);
+        box-shadow: 0 0 0 rgba(124,156,255,0);
       }
     }
 
@@ -312,6 +359,43 @@
       justify-self: end;
       transform-origin: center;
       will-change: transform;
+      position: relative;
+      overflow: visible;
+    }
+    .photo-wrap {
+      position: relative;
+      display: inline-block;
+      border-radius: 26px;
+      animation: photoFloat 3.8s ease-in-out infinite;
+      will-change: transform;
+    }
+    
+    .photo-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -18px;
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(142,240,208,0.30), transparent 45%),
+        radial-gradient(circle at 72% 68%, rgba(124,156,255,0.28), transparent 48%);
+      filter: blur(20px);
+      z-index: 0;
+      animation: glowPulse 3.2s ease-in-out infinite;
+      pointer-events: none;
+    }
+    
+    .photo-wrap::after {
+      content: "";
+      position: absolute;
+      inset: -10px;
+      border-radius: 30px;
+      border: 1px solid rgba(142,240,208,0.24);
+      box-shadow:
+        0 0 0 1px rgba(124,156,255,0.10),
+        0 0 40px rgba(124,156,255,0.20),
+        0 0 72px rgba(142,240,208,0.10);
+      z-index: 0;
+      pointer-events: none;
     }
 
     .profile-photo {
@@ -323,6 +407,8 @@
       border-radius: 22px;
       border: 1px solid var(--border);
       background: rgba(255,255,255,0.04);
+      position: relative;
+      z-index: 1;
     }
 
     .hero-panel:hover {
@@ -333,6 +419,18 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
+    }
+    .snapshot-grid .snapshot-item:nth-child(1) {
+      animation: snapshotPulse 2.8s ease-in-out infinite;
+    }
+    .snapshot-grid .snapshot-item:nth-child(2) {
+      animation: snapshotPulse 2.8s ease-in-out 0.35s infinite;
+    }
+    .snapshot-grid .snapshot-item:nth-child(3) {
+      animation: snapshotPulse 2.8s ease-in-out 0.7s infinite;
+    }
+    .snapshot-grid .snapshot-item:nth-child(4) {
+      animation: snapshotPulse 2.8s ease-in-out 1.05s infinite;
     }
 
     .snapshot-item {
@@ -518,7 +616,9 @@
         max-width: none;
         justify-self: stretch;
       }
-      .hero-panel {
+      .hero-panel,
+      .photo-wrap,
+      .snapshot-grid .snapshot-item {
         animation: none;
       }
     }
@@ -568,7 +668,9 @@
       </div>
 
       <aside class="hero-panel">
-        <img class="profile-photo" src="assets/Images/Profile.png" alt="Thilisitha Chelsea Vadlapati" />
+        <div class="photo-wrap">
+          <img class="profile-photo" src="assets/Images/Profile.png" alt="Thilisitha Chelsea Vadlapati" />
+        </div>
         <div>
           <h2 style="margin-bottom: 8px;">Quick Snapshot</h2>
           <div class="snapshot-grid">
